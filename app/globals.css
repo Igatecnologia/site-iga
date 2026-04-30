@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  /* Pristine Light Theme (Totvs/Linx style) */
+  :root,
+  .theme-light {
+    --c-bg: #FFFFFF;
+    --c-surface: #FFFFFF;
+    --c-surface-2: #F8FAFC;
+    --c-ink: #0F172A;
+    --c-muted: #64748B;
+    --c-border: #E2E8F0;
+    --c-border-blue: rgba(27, 94, 166, 0.2);
+    --c-dot: #CBD5E1;
+  }
+
+  /* Clean Enterprise Dark Theme */
+  .theme-dark {
+    --c-bg: #0B1120;
+    --c-surface: #0F172A;
+    --c-surface-2: #1E293B;
+    --c-ink: #F8FAFC;
+    --c-muted: #94A3B8;
+    --c-border: #334155;
+    --c-border-blue: rgba(74, 144, 217, 0.4);
+    --c-dot: #334155;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--c-bg);
+    color: var(--c-ink);
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv11', 'kern';
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(27, 94, 166, 0.2);
+    color: var(--c-ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply w-full max-w-7xl mx-auto px-[clamp(1.25rem,5vw,2rem)];
+  }
+
+  .section-padding {
+    @apply py-[clamp(5rem,10vw,8rem)];
+  }
+
+  .section-label {
+    @apply font-mono text-[13px] uppercase tracking-[0.1em] text-accent font-semibold;
+  }
+
+  .heading-xl {
+    @apply font-display text-display-xl font-bold text-ink leading-[1.05] tracking-tight;
+  }
+
+  .heading-lg {
+    @apply font-display text-display-lg font-bold text-ink tracking-tight leading-[1.1];
+  }
+
+  .body-text {
+    @apply font-body text-body-base text-muted max-w-[65ch] leading-[1.7];
+  }
+
+  /* Modern B2B Cards (Solid, Clean) */
+  .card-base {
+    @apply bg-surface border border-border rounded-2xl shadow-sm hover:border-border-blue hover:shadow-md transition-all duration-300 relative overflow-hidden;
+  }
+
+  .btn-primary {
+    @apply bg-royal hover:bg-royal-light active:scale-[0.98] text-white font-body font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-surface border border-border text-ink hover:bg-surface-2 active:scale-[0.98] font-body font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-sm hover:border-border-blue;
+  }
+
+  .metric-card {
+    @apply bg-surface border border-border rounded-2xl p-6 shadow-sm hover:border-border-blue hover:shadow-md transition-all duration-300 relative overflow-hidden;
+  }
+
+  .glass-panel {
+    @apply backdrop-blur-md border border-border shadow-sm;
+    background-color: color-mix(in srgb, var(--c-surface) 90%, transparent);
+  }
+
+  .neumorphic-button {
+    @apply relative overflow-hidden;
+  }
+
+  .neumorphic-button::after {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300 bg-gradient-to-br from-accent/25 to-transparent rounded-full pointer-events-none;
+  }
+
+  .neumorphic-button:hover::after {
+    @apply opacity-100;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
