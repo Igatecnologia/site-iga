@@ -12,6 +12,7 @@ import {
 import { Menu, X, Phone } from 'lucide-react'
 import { navLinks, company } from '@/lib/data'
 import { cn } from '@/lib/utils'
+import { stripBasePath, withBasePath } from '@/lib/paths'
 import { CallbackDialog } from '@/components/ui/CallbackDialog'
 
 export function IgaLogoMark({
@@ -83,7 +84,8 @@ export function Navbar() {
   React.useEffect(() => {
     if (typeof window === 'undefined') return
     const syncHash = () => {
-      const { pathname, hash } = window.location
+      const { hash } = window.location
+      const pathname = stripBasePath(window.location.pathname)
       if (pathname !== '/' && pathname !== '') {
         setActiveHash(pathname)
       } else {
@@ -101,7 +103,7 @@ export function Navbar() {
 
   React.useEffect(() => {
     if (typeof window === 'undefined') return
-    if (window.location.pathname !== '/') return
+    if (stripBasePath(window.location.pathname) !== '/') return
     const hashIds = navLinks
       .map((l) => l.href)
       .filter((h) => h.startsWith('/#'))
@@ -186,7 +188,7 @@ export function Navbar() {
             return (
               <a
                 key={link.href}
-                href={link.href}
+                href={withBasePath(link.href)}
                 onClick={() => setActiveHash(link.href)}
                 onMouseEnter={() => setHoverHash(link.href)}
                 className={cn(
@@ -297,7 +299,7 @@ export function Navbar() {
               {navLinks.map((link) => (
                 <motion.a
                   key={link.href}
-                  href={link.href}
+                  href={withBasePath(link.href)}
                   onClick={() => setOpen(false)}
                   variants={{
                     hidden: { opacity: 0, y: 16 },

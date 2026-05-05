@@ -14,6 +14,7 @@ import {
   footerLegalLinks,
   navLinks,
 } from '@/lib/data'
+import { withBasePath } from '@/lib/paths'
 
 export function Footer() {
   return (
@@ -81,7 +82,7 @@ export function Footer() {
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
-                    href={link.href}
+                    href={withBasePath(link.href)}
                     className="text-sm text-muted hover:text-ink transition-colors"
                   >
                     {link.label}

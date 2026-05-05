@@ -56,6 +56,37 @@ export function Contact() {
       return
     }
 
+    if (process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true') {
+      const lines = [
+        'Ola IGA Tecnologia!',
+        '',
+        'Quero solicitar um diagnostico.',
+        '',
+        `*Nome:* ${formState.nome}`,
+        `*Empresa:* ${formState.empresa}`,
+        `*WhatsApp:* ${formState.telefone}`,
+        formState.origem ? `*Origem:* ${formState.origem}` : '',
+        formState.horario ? `*Melhor horario:* ${formState.horario}` : '',
+        `*Desafio:* ${formState.mensagem}`,
+      ].filter(Boolean)
+
+      window.open(
+        `${company.whatsappApi}&text=${encodeURIComponent(lines.join('\n'))}`,
+        '_blank',
+        'noopener,noreferrer'
+      )
+      setStatus('success')
+      setFormState({
+        nome: '',
+        empresa: '',
+        telefone: '',
+        mensagem: '',
+        origem: '',
+        horario: '',
+      })
+      return
+    }
+
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',

@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import {
   ArrowUpRight,
@@ -166,13 +167,13 @@ export function Services() {
             <span className="text-accent italic">produtos em detalhe</span>?{' '}
             <span className="text-muted">ERP, PDV e Mobile em uma página.</span>
           </p>
-          <a
+          <Link
             href="/solucoes"
             className="inline-flex items-center gap-2 font-mono uppercase text-[11px] tracking-[0.18em] text-accent hover:text-royal transition-colors group"
           >
             Ver todas as soluções
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

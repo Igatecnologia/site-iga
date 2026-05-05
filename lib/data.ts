@@ -10,6 +10,8 @@ import type {
 
 const foundedYear = 2001
 const yearsActive = new Date().getFullYear() - foundedYear
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://igatecnologia.com.br'
 
 export const company = {
   name: 'IGA Sistemas e Consultoria',
@@ -33,7 +35,7 @@ export const company = {
   },
   policyUrl:
     'https://drive.google.com/file/d/18ScOlGkS7WKBaRKNtS-Letc5mgJZsKLh/view',
-  site: 'https://igatecnologia.com.br',
+  site: siteUrl,
   social: {
     facebook: 'https://facebook.com/igasistemasconsultoria',
     instagram: 'https://instagram.com/igasistemaseconsultoria',
