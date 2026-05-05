@@ -65,6 +65,10 @@ export default function RootLayout({
       'Sistemas de gestão empresarial',
     ],
   }
+  const structuredDataJson = JSON.stringify(structuredData).replace(
+    /</g,
+    '\\u003c'
+  )
 
   return (
     <html
@@ -83,7 +87,7 @@ export default function RootLayout({
         <CustomCursor />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: structuredDataJson }}
         />
       </body>
     </html>
