@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { viewportDefault } from '@/lib/animations'
+import { withBasePath } from '@/lib/paths'
 
 const CLIENT_IMAGES = Array.from({ length: 8 }, (_, i) => ({
   id: i + 1,
@@ -77,7 +78,7 @@ export function Clients() {
               className="group relative border-r border-b border-border aspect-[4/3] overflow-hidden bg-surface/50"
             >
               <Image
-                src={c.src}
+                src={withBasePath(c.src)}
                 alt={`Cliente IGA ${c.id}`}
                 fill
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"

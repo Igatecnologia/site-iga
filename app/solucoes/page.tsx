@@ -47,7 +47,7 @@ type ProductOverride = {
 
 const PRODUCT_BY_ID: Record<string, ProductOverride & { inDevelopment?: boolean }> = {
   'consultoria-erp': {
-    imageSrc: '/product/dashboard-analise.png',
+    imageSrc: '/product/dashboard-analise.webp',
     imageAlt: 'Dashboard Analítico IGA — Faturamento, Ticket Médio, Clientes e Margem Bruta',
     imageBg: 'royal',
     title: 'Sistema de Dashboard Analítico IGA',
@@ -64,7 +64,7 @@ const PRODUCT_BY_ID: Record<string, ProductOverride & { inDevelopment?: boolean 
     ],
   },
   'implementacao-erp': {
-    imageSrc: '/product/pdv.png',
+    imageSrc: '/product/pdv.webp',
     imageAlt: 'PDV ERP IGA — Caixa Completo',
     imageBg: 'royal',
     title: 'PDV ERP Caixa Completo',
@@ -80,7 +80,7 @@ const PRODUCT_BY_ID: Record<string, ProductOverride & { inDevelopment?: boolean 
     ],
   },
   'analise-dados': {
-    imageSrc: '/product/sistema-mobile.png',
+    imageSrc: '/product/sistema-mobile.webp',
     imageAlt: 'Sistema PDV Mobile IGA — app e terminal POS',
     imageBg: 'purple',
     title: 'Sistema PDV Mobile',
@@ -96,7 +96,7 @@ const PRODUCT_BY_ID: Record<string, ProductOverride & { inDevelopment?: boolean 
     ],
   },
   dashboards: {
-    imageSrc: '/product/erp-mobile.png',
+    imageSrc: '/product/erp-mobile.webp',
     imageAlt: 'Sistema de Gerenciamento em Nuvem IGA — desktop e mobile',
     imageBg: 'royal',
     title: 'Sistema de Gerenciamento em Nuvem',
@@ -112,7 +112,7 @@ const PRODUCT_BY_ID: Record<string, ProductOverride & { inDevelopment?: boolean 
     ],
   },
   'gestao-mudancas': {
-    imageSrc: '/product/deliveryvip.png',
+    imageSrc: '/product/deliveryvip.webp',
     imageAlt: 'DeliveryVip — plataforma de delivery própria, site e app personalizados',
     imageBg: 'purple',
     title: 'DeliveryVip — Delivery sem comissão',
@@ -136,7 +136,7 @@ const EXTRA_SOLUTIONS: SolutionItem[] = [
     description:
       'Controle completo de chão-de-fábrica: ordens de produção, acompanhamento de lotes, apontamento por funcionário e previsão de entrega. Do cadastro ao encerramento, toda a jornada da produção em um único sistema.',
     badge: 'Indústria · Ordens de produção',
-    imageSrc: '/product/industria.png',
+    imageSrc: '/product/industria.webp',
     imageAlt: 'Sistema de Gerenciamento Industrial — tela de ordens de produção',
     imageBg: 'royal',
     highlights: [

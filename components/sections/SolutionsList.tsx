@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/Button'
 import { IconBox } from '@/components/ui/IconBox'
 import { fadeUp, viewportDefault } from '@/lib/animations'
 import { company } from '@/lib/data'
+import { withBasePath } from '@/lib/paths'
 
 type SolutionItem = {
   id: string
@@ -72,7 +73,7 @@ export function SolutionsList({ solutions }: { solutions: SolutionItem[] }) {
                 {s.imageSrc ? (
                   <div className="absolute inset-0 flex items-center justify-center p-6 sm:p-10">
                     <Image
-                      src={s.imageSrc}
+                      src={withBasePath(s.imageSrc)}
                       alt={s.imageAlt ?? s.title}
                       fill
                       sizes="(max-width: 1024px) 90vw, 55vw"

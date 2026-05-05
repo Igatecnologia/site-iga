@@ -30,7 +30,7 @@ export function IgaLogoMark({
 
   return (
     <Image
-      src="/brand/iga-logo.png"
+      src={withBasePath('/brand/iga-logo.png')}
       alt="IGA Tecnologia"
       width={dims.w}
       height={dims.h}
